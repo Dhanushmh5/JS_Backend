@@ -27,3 +27,4 @@ one(); // -> normal way to execute a function
 ( function chai(){
     console.log("Chai")
 })(); // -> named iife
+

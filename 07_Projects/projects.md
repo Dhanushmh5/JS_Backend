@@ -4,7 +4,7 @@
 [Click here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
 # Solution code
 
-## project 1
+## project 1(Color Changer)
 
 ```Javascript
 const buttons=document.querySelectorAll(".button")
@@ -27,7 +27,7 @@ buttons.forEach((button)=>{
 })
 ```
 
-## project 2
+## project 2(BMI Generator)
 
 ```javascript
 const form=document.querySelector("form")
@@ -54,7 +54,7 @@ form.addEventListener('submit',(event)=>{
 })
 ```
 
-## project 3
+## project 3(Digital Clock)
 ```javascript
 const clock=document.getElementById('clock')
 //const clock=document.querySelector('#clock')
@@ -68,7 +68,7 @@ setInterval(function(){
 },1000)
 ```
 
-## project 4
+## project 4(Guess the number)
 
 ```javascript
 
@@ -165,4 +165,64 @@ function newGame() {
 }
 
 
+```
+
+## project5(Background Changer)
+
+```javascript
+//Generating random colour
+
+const randomColour=()=>{
+  const hex='0123456789ABCDEF'
+  let colour='#'
+  for(let i=0;i<6;i++){
+    colour+=hex[Math.floor(Math.random()*16)]
+  }
+  return colour
+};
+console.log(randomColour())
+let ref;
+const startChangingColor=()=>{
+  function changeBg(){
+    document.body.style.backgroundColor=randomColour()
+  }
+  if(!ref){
+    ref=setInterval(changeBg,500)
+  }
+  
+}
+
+const stopChangingColor=()=>{
+  clearInterval(ref)
+  //dereferencing
+  ref=null
+}
+
+document.querySelector('#start').addEventListener('click',startChangingColor)
+
+document.querySelector('#stop').addEventListener('click',stopChangingColor)
+```
+
+## project6(Magic KeyBoard)
+```javascript
+const insert=document.getElementById('insert')
+
+window.addEventListener('keydown',(e)=>{
+  insert.innerHTML=`
+  <div class='color'>
+    <table>
+    <tr>
+      <th>Key</th>
+      <th>Keycode</th> 
+      <th>Code</th>
+    </tr>
+    <tr>
+      <td>${e.key === ' ' ? 'Space' : e.key}</td>
+      <td>${e.keyCode}</td> 
+      <td>${e.code}</td>
+    </tr>
+    
+  </table>
+    </div>`
+})
 ```

@@ -106,6 +106,9 @@ consumePromise5()
 // }
 // getAllUsers()
 
+//Fetch in Javascript
+
+
 fetch('https://jsonplaceholder.typicode.com/users')
 .then((user)=>{
     const data= user.json()
